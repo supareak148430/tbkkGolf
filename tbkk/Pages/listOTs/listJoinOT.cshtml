@@ -17,7 +17,7 @@
     <div class="input-group"></div>
     <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="but    ton" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
@@ -62,7 +62,7 @@
 
                 <a class="dropdown-item" asp-page="./../listOTs/listOT" asp-route-id=@Model.Employee.EmployeeID>Request OT</a>
                 <a class="dropdown-item" asp-page="./../listOTs/CarQueue" asp-route-id=@Model.Employee.EmployeeID>Bus Station</a>
-                <a class="dropdown-item" asp-page="./../listOTs/listJoinOT" asp-route-id=@Model.Employee.EmployeeID>List Show Join OT</a>
+                <a class="dropdown-item" asp-page="./../listOTs/listJoinOT" asp-route-id=@Model.Employee.EmployeeID>History OT</a>
 
                 @{
                     if (Model.Employee.Department_DepartmentID == 5 || !Model.Employee.Position.PositionName.Equals("Employee"))
@@ -80,7 +80,7 @@
                         <h6 class="dropdown-header">Management OT</h6>
                         //<a class="dropdown-item" asp-page="./../listOTs/manageOT" asp-route-id=@Model.Employee.EmployeeID>List OT</a>
                         <a class="dropdown-item" asp-page="./../listOTs/manageOT" asp-route-id=@Model.Employee.EmployeeID>Manage OT</a>
-                        <a class="dropdown-item" asp-page="./../listOTs/OTcar" asp-route-id=@Model.Employee.EmployeeID>Car Management</a>
+                        <a class="dropdown-item" asp-page="./../listOTs/OTcar" asp-route-id=@Model.Employee.EmployeeID>Shuttle Management</a>
 
 
                         //<a class="dropdown-item" asp-page="./../listOTs/addOT" asp-route-id=@Model.Employee.EmployeeID>Report OT</a>
@@ -113,7 +113,37 @@
         <div name="55555" class="card-layout">
 
 
-            <h1>List Join OT</h1>
+            
+
+
+            <div class="card">
+                <div class="card-header">
+                    My History
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p>Name : </p> 
+                                    <p>Company Name : </p>
+                                    <p>Department : </p>
+                                    <p>Position : </p>
+                                    <p>Over Time : </p>
+
+
+                                    
+                                </div>
+
+                                <div class="col-sm">
+                                    <center><img src="~/uploads/networking.png" width="250px" height="250px" /></center>
+                                </div>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+
 
 
 
@@ -126,7 +156,7 @@
                         <th>
                             Date
                         </th>
-                        <th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].Employee)
                         </th>
                         <th>
@@ -134,19 +164,19 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].TimeEnd)
-                        </th>
+                        </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].Hour)
                         </th>
-                        <th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].Type)
-                        </th>
+                        </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].CarNumber)
                         </th>
-                        <th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].Status)
-                        </th>
+                        </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.DetailOT[0].Part)
                         </th>
@@ -225,7 +255,7 @@
         <footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright © Your Website 2019</span>
+                    
                 </div>
             </div>
         </footer>

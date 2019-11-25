@@ -69,7 +69,7 @@
 
                 <a class="dropdown-item" asp-page="./../listOTs/listOT" asp-route-id=@Model.Employee.EmployeeID>Request OT</a>
                 <a class="dropdown-item" asp-page="./../listOTs/CarQueue" asp-route-id=@Model.Employee.EmployeeID>Bus Station</a>
-                <a class="dropdown-item" asp-page="./../listOTs/listJoinOT" asp-route-id=@Model.Employee.EmployeeID>List Show Join OT</a>
+                <a class="dropdown-item" asp-page="./../listOTs/listJoinOT" asp-route-id=@Model.Employee.EmployeeID>History OT</a>
 
                 @{
                     if (Model.Employee.Department_DepartmentID == 5 || !Model.Employee.Position.PositionName.Equals("Employee"))
@@ -87,8 +87,8 @@
                         <h6 class="dropdown-header">Management OT</h6>
                         //<a class="dropdown-item" asp-page="./../listOTs/manageOT" asp-route-id=@Model.Employee.EmployeeID>List OT</a>
                         <a class="dropdown-item" asp-page="./../listOTs/manageOT" asp-route-id=@Model.Employee.EmployeeID>Manage OT</a>
-                        <a class="dropdown-item" asp-page="./../listOTs/OTcar" asp-route-id=@Model.Employee.EmployeeID>Car Management</a>
-
+                        <a class="dropdown-item" asp-page="./../listOTs/OTcar" asp-route-id=@Model.Employee.EmployeeID>Shuttle Management</a>
+                        
 
                         //<a class="dropdown-item" asp-page="./../listOTs/addOT" asp-route-id=@Model.Employee.EmployeeID>Report OT</a>
 
@@ -117,46 +117,25 @@
     </ul>
     <div id="content-wrapper">
         <div name="55555" class="card-layout">
-            <h1>listEmpOT</h1>
+            <h1>List OT</h1>
 
             
             <table class="table">
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].TimeStart)
+                            FirstName
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].TimeEnd)
+                            LastName
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].Hour)
+                            Over Time
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].Type)
+                            Time All
                         </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].CarNumber)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].Status)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].Part)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].FoodSet)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].CarType)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].OT)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetailOT[0].Employee)
-                        </th>
-                        <th></th>
+       
                     </tr>
                 </thead>
                 <tbody>
@@ -164,38 +143,18 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TimeStart)
+                                @Html.DisplayFor(modelItem => item.Employee.FirstName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TimeEnd)
+                                @Html.DisplayFor(modelItem => item.Employee.LastName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Hour)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.Type)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CarNumber)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Part.PartID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FoodSet.FoodSetID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CarType.CarTypeID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.OT.OTID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Employee.EmployeeID)
-                            </td>
+                            </td>*@
+                            
                             <td>
                                 
                                 <a asp-page="./Details" asp-route-id="@item.DetailOTID" asp-route-emp="@Model.Employee.EmployeeID">List</a> 
@@ -249,34 +208,6 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <h1>listEmpOT</h1>
